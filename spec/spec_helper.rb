@@ -1,6 +1,5 @@
 require "rspec"
 require "awesome_print"
-require "debugger"
 
 RSpec.configure do |config|
   config.color_enabled = true
