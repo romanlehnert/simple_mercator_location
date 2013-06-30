@@ -1,6 +1,7 @@
 # Simple Mercator Location
 
 [![Build Status](https://travis-ci.org/romanlehnert/simple_mercator_location.png)](https://travis-ci.org/romanlehnert/simple_mercator_location)
+[![Code Climate](https://codeclimate.com/github/romanlehnert/simple_mercator_location.png)](https://codeclimate.com/github/romanlehnert/simple_mercator_location)
 
 
 A Ruby lib that uses the [Mercator Projection](https://en.wikipedia.org/wiki/Mercator_projection) to convert WSG84 coordinates (latitude, longitude) to meters, pixels and tiles. 
