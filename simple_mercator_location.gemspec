@@ -10,4 +10,5 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/romanlehnert/simple_mercator_location'
   s.license     = "MIT"
   s.test_files  = Dir.glob("{spec,test}/**/*.rb")
+  s.add_development_dependency "rspec", '~> 2.5'
 end
