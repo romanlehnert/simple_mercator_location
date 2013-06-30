@@ -1,8 +1,12 @@
 source 'https://rubygems.org'
 
-gem "rmagick"
-gem "debugger"
-gem "rspec"
+gemspec
+
+gem "guard"
+gem "guard-rspec"
 gem "awesome_print"
-gem "google-map-stitch", :path => "/Users/roman/dev/google-map-stitch"
-gem "pickled_optparse"
+
+gem "rmagick"
+gem "rspec"
+gem "rake"
+gem "coveralls", require: false
