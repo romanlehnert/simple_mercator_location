@@ -1,6 +1,9 @@
 require "rspec"
 require "awesome_print"
 
+require 'coveralls'
+Coveralls.wear!
+
 RSpec.configure do |config|
   config.color_enabled = true
   config.filter_run :focus => true
