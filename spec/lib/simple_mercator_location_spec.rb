@@ -72,7 +72,8 @@ describe SimpleMercatorLocation do
         ]
       places.each do |place|
         it "calculates the mercator projection of (lat: #{place[:lat]}, lon: #{place[:lon]}) to (meters x: #{place[:mx]}, meters y: #{place[:my]})" do
-          SimpleMercatorLocation.new(lon: place[:lon], lat: place[:lat]).to_m.should eql([place[:mx], place[:my]])
+          meters = SimpleMercatorLocation.new(lon: place[:lon], lat: place[:lat]).to_m
+          meters.map!{|m| m.round(8) }.should eql([place[:mx], place[:my]])
         end
       end
     end

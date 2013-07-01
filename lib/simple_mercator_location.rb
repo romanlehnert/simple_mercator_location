@@ -29,13 +29,13 @@ class SimpleMercatorLocation
 
     # factor for scaling to radiants
     def shift_to_rad
-      Math::PI / 180.0
+      Rational(Math::PI, 180)
     end
 
 
     # factor for scaling to degrees
     def shift_to_deg
-      180.0 / Math::PI
+      Rational(180.0, Math::PI)
     end
 
 
@@ -69,7 +69,7 @@ class SimpleMercatorLocation
 
     # return the pixels per degree
     def pixel_per_degree
-      tile_size / 360.0
+      Rational(tile_size, 360)
     end
 
 
@@ -83,7 +83,7 @@ class SimpleMercatorLocation
     # see http://en.wikipedia.org/wiki/Mercator_projection#Derivation_of_the_Mercator_projection
     # return the scaled latitude as radiant
     def lat_scaled_rad
-      Math.log( Math.tan( (Math::PI/4) + (lat_rad / 2) )) 
+      Math.log( Math.tan( Rational(Math::PI,4) + Rational(lat_rad,2) )) 
     end
 
 
@@ -98,7 +98,9 @@ class SimpleMercatorLocation
         mx = earth_radius * lon_rad
         my = earth_radius * lat_scaled_rad
 
-        [mx.round(8), my.round(8)]
+        my = (my.round(8) == 0)? 0 : my
+
+        [mx.to_f, my.to_f]
     end
 
 
@@ -124,12 +126,12 @@ class SimpleMercatorLocation
 
     # calculates the tile numbers for google maps at the given zoom level
     def to_tile
-        px,py = self.to_px
+      px,py = self.to_px
 
-        tx = px / tile_size
-        ty = py / tile_size
+      tx = Rational(px, tile_size).to_i
+      ty = Rational(py, tile_size).to_i
 
-        return [tx,ty]
+      return [tx,ty]
     end
 
 end
