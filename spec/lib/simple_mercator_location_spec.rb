@@ -102,6 +102,7 @@ describe SimpleMercatorLocation do
       [
         { zoom: 11, lat: 49.38237278700955, lon: 8.61328125, px: 274688,  py: 179200  },
         { zoom: 14, lat: 49.38237278700955, lon: 8.61328125, px: 2197504, py: 1433600 },
+        { zoom: 14, lat: 49.49667452747044, lon: 8.96484375, px: 2201600, py: 1431551 },
       ]
 
     places.each do |place|
