@@ -75,7 +75,7 @@ class SimpleMercatorLocation
 
     # return the pixels per radiant
     def pixel_per_rad
-      tile_size / (2 * Math::PI) # tile_size / (360 * shift_to_rad)
+      Rational(tile_size, (2 * Math::PI))
     end
 
     

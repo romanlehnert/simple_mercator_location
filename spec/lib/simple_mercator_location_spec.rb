@@ -70,10 +70,12 @@ describe SimpleMercatorLocation do
           { lat: 48.22467264956519, lon: 12.12890625,   mx: 1350183.66762935, my: 6144314.08167561 },
           { lat: 0,                 lon: 0,             mx: 0.0,              my: 0.0 },
         ]
+      delta = 10**(-8)
       places.each do |place|
         it "calculates the mercator projection of (lat: #{place[:lat]}, lon: #{place[:lon]}) to (meters x: #{place[:mx]}, meters y: #{place[:my]})" do
           meters = SimpleMercatorLocation.new(lon: place[:lon], lat: place[:lat]).to_m
-          meters.map!{|m| m.round(8) }.should eql([place[:mx], place[:my]])
+          meters.first.should be_within(delta).of(place[:mx])
+          meters.last.should be_within(delta).of(place[:my])
         end
       end
     end
@@ -83,13 +85,13 @@ describe SimpleMercatorLocation do
     places =
         [
           { lat: 41.850033, lon: -87.65005229999997, wx: 65.67107392000001, wy: 95.1748950436046 },
-          #{ lat: 48.10743118848038, lon: 11.42578125,   wx: 1271912.15066533, wy: 6124746.20243460 },
-          #{ lat: 48.22467264956519, lon: 12.12890625,   wx: 1350183.66762935, wy: 6144314.08167561 },
-          #{ lat: 0,                 lon: 0,             wx: 0.0,              wy: 0.0 },
         ]
+      delta = 10**(-8)
       places.each do |place|
         it "calculates the mercator projection of (lat: #{place[:lat]}, lon: #{place[:lon]}) to (world coordinate x: #{place[:wx]}, world coordinate y: #{place[:wy]})" do
-          SimpleMercatorLocation.new(lon: place[:lon], lat: place[:lat]).to_w.should eql([place[:wx], place[:wy]])
+          wc = SimpleMercatorLocation.new(lon: place[:lon], lat: place[:lat]).to_w
+          wc.first.should be_within(delta).of(place[:wx])
+          wc.last.should be_within(delta).of(place[:wy])
         end
       end
 
@@ -107,7 +109,8 @@ describe SimpleMercatorLocation do
 
     places.each do |place|
       it "calculates the pixels of (lat: #{place[:lat]}, lon: #{place[:lon]}) to (px: #{place[:px]}, py: #{place[:py]})" do
-        SimpleMercatorLocation.new(lon: place[:lon], lat: place[:lat], zoom: place[:zoom]).to_px.should eql([place[:px], place[:py]])
+        px = SimpleMercatorLocation.new(lon: place[:lon], lat: place[:lat], zoom: place[:zoom]).to_px
+        px.should eql([place[:px], place[:py]])
       end
     end
   end
