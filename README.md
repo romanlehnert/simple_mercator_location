@@ -32,7 +32,7 @@ https://khms0.google.com/kh/v=131&src=app&x=602&y=770&z=11&s=Gal
 At its first zoom level (0), google assumes the world tile to display the whole world. At a higher zoom level n (>2), google uses 2^n tiles to display the whole world. Every tile has 256x256 pixels. #to_px retuns the pixels on the whole map for a given zoom level.
 ```ruby
 place = {lat: 49.38237278700955, lon: 8.61328125}
-SimpleMercatorLocation.new(place).at_zoom(11).to_px  # <= [274688, 179200]
+SimpleMercatorLocation.new(place).zoom_at(11).to_px  # <= [274688, 179200]
 ```
 
 
