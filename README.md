@@ -1,6 +1,7 @@
 # Simple Mercator Location
 
 [![Build Status](https://travis-ci.org/romanlehnert/simple_mercator_location.png)](https://travis-ci.org/romanlehnert/simple_mercator_location)
+[![Coverage Status](https://coveralls.io/repos/romanlehnert/simple_mercator_location/badge.png?branch=master)](https://coveralls.io/r/romanlehnert/simple_mercator_location?branch=master)
 [![Code Climate](https://codeclimate.com/github/romanlehnert/simple_mercator_location.png)](https://codeclimate.com/github/romanlehnert/simple_mercator_location)
 [![Dependency Status](https://gemnasium.com/romanlehnert/simple_mercator_location.png)](https://gemnasium.com/romanlehnert/simple_mercator_location)
 [![Gem Version](https://badge.fury.io/rb/simple_mercator_location.png)](http://badge.fury.io/rb/simple_mercator_location)
