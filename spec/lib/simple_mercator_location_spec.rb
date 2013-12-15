@@ -85,6 +85,7 @@ describe SimpleMercatorLocation do
     places =
         [
           { lat: 41.850033, lon: -87.65005229999997, wx: 65.67107392000001, wy: 95.1748950436046 },
+          { lat: 48.850033, lon: 11.65005229999997, wx: 136.28448163555552, wy: 88.0783683655855 },
         ]
       delta = 10**(-8)
       places.each do |place|
@@ -104,7 +105,6 @@ describe SimpleMercatorLocation do
       [
         { zoom: 11, lat: 49.38237278700955, lon: 8.61328125, px: 274688,  py: 179200  },
         { zoom: 14, lat: 49.38237278700955, lon: 8.61328125, px: 2197504, py: 1433600 },
-        { zoom: 14, lat: 49.49667452747044, lon: 8.96484375, px: 2201600, py: 1431551 },
       ]
 
     places.each do |place|
