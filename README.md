@@ -53,3 +53,7 @@ place = {lon: 12.12890625, lat: 48.22467264956519}
 SimpleMercatorLocation.new(place).to_m  # <= [1350183.66762935, 6144314.08167561]
 ```
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/romanlehnert/simple_mercator_location/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
